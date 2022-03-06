@@ -1,0 +1,29 @@
+class Solution(object):
+    def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        rev=0
+        lower_range = pow(-2,31)
+        higher_range = pow(2,31)
+        if x<lower_range or x>higher_range:
+            return 0
+        if x==0:
+            return 0
+        negative = -1
+        if x<0:
+            x=x*negative
+            while x!=0:
+                temp = x%10
+                rev = rev*10+temp
+                x=x/10
+            rev = rev * negative
+        if x>0:
+            while x!=0:
+                temp = x%10
+                rev = rev*10+temp
+                x=x/10
+        if rev<lower_range or rev>higher_range:
+            return 0
+        return(rev)

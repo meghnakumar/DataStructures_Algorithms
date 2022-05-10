@@ -54,13 +54,11 @@ class Solution(object):
             if i != 0:
                 product = product * nums[i - 1]
             output[i] = product
-
         product = 1
         for i in range(len(nums) - 1, -1, -1):
             if i != (len(nums) - 1):
                 product = product * nums[i + 1]
             output[i] = output[i] * product
-
         return output
 
 

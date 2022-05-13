@@ -13,3 +13,17 @@ class Solution(object):
             if i < res:
                 res = i
         return res
+
+    #Optimized solution
+    def findMin_Optimized(self, nums):
+        n = len(nums)
+        l = 0
+        r = 1
+        while r < n:
+            if nums[l] < nums[r]:
+                l = r
+                r = l + 1
+            else:
+                return nums[r]
+        return nums[0]
+

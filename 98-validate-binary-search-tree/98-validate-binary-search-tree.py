@@ -11,5 +11,4 @@ class Solution:
             return True
         if root.val<=minVal or root.val>=maxVal:
             return False
-        leftValid = self.isValidBST(root.left, minVal, root.val)
-        return leftValid & self.isValidBST(root.right, root.val, maxVal)
+        return self.isValidBST(root.left, minVal, root.val) & self.isValidBST(root.right, root.val, maxVal)

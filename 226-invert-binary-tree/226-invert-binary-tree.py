@@ -17,13 +17,5 @@ class Solution(object):
         self.invertTree(root.right)
         root.left,root.right = root.right,root.left
         return root
-        
-           
-        
-    # def checkSym(self,p,q):
-    #     if p is not None and q is not None:
-    #         p.val=q.val
-    #         return self.checkSym(p.left,q.right) and self.checkSym(p.right,q.left)
-    #     return p
     
     

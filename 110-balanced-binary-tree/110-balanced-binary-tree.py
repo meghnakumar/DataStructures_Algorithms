@@ -15,15 +15,11 @@ class Solution(object):
         if root.left is None and root.right is None:
             return True
         leftH=self.checkHiegth(root.left)
-        print(leftH)
         rightH = self.checkHiegth(root.right)
-        print(rightH)
         if abs(leftH-rightH) >1:
-            print("Value greater")
             return False
         else:
             return self.isBalanced(root.left) and self.isBalanced(root.right)
-            # return self.isBalanced(root.right)
         return True
         
     

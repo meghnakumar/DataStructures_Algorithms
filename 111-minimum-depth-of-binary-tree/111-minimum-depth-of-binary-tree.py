@@ -16,7 +16,6 @@ class Solution(object):
         if root.left is not None and root.right is not None:
             return min(self.minDepth(root.left, depth), self.minDepth(root.right, depth))
         if root.left is None and root.right is not None:
-            print depth
             return self.minDepth(root.right,depth)
         else:
             return self.minDepth(root.left,depth)

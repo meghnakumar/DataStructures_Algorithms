@@ -12,13 +12,11 @@ class Solution(object):
         :rtype: int
         """
         array=[]
-        tree = self.buildArray(root,array)
-        tree.sort()
-        print(tree)
-        for i in range(len(tree)):
-            print i,k-1
+        array = self.buildArray(root,array)
+        array.sort()
+        for i in range(len(array)):
             if i==k-1:
-                return tree[i]
+                return array[i]
         return 0
         
     def buildArray(self,root,array):

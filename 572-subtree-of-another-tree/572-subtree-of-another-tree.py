@@ -22,9 +22,9 @@ class Solution(object):
     
     
     def checkSub(self,root,subRoot):
-        if not root and not subRoot:
+        if root is None and subRoot is None:
             return True
-        if root and subRoot and root.val==subRoot.val:
+        if root is not None and subRoot is not None and  root.val==subRoot.val:
             return self.checkSub(root.left,subRoot.left) and self.checkSub(root.right,subRoot.right)
         return False
         

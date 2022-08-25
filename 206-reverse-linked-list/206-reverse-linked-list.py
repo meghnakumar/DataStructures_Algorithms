@@ -9,11 +9,13 @@ class Solution(object):
         :type head: ListNode
         :rtype: ListNode
         """
-        print head
-        prev = None
-        while head:
-            curr = head
-            head = head.next
-            curr.next = prev
-            prev = curr
-        return prev
+        return self.rev(head)
+    
+    def rev(self,head, prev=None):
+        if not head:
+            return prev
+        curr=head.next
+        head.next=prev
+        return self.rev(curr,head)
+        
+        

@@ -6,17 +6,27 @@
 #         self.right = right
 class Solution:
     def goodNodes(self, root: TreeNode, res=1) -> int:
-        result = 0
-        stk = [(root, root.val)]
-        while stk:
-            node, curr_max = stk.pop()
-            if not node:
-                continue
-            curr_max = max(curr_max, node.val)
-            result += int(curr_max <= node.val)
-            stk.append((node.right, curr_max))
-            stk.append((node.left, curr_max))
-        return result
+        # result = 0
+        # stk = [(root, root.val)]
+        # while stk:
+        #     node, curr_max = stk.pop()
+        #     if not node:
+        #         continue
+        #     curr_max = max(curr_max, node.val)
+        #     result += int(curr_max <= node.val)
+        #     stk.append((node.right, curr_max))
+        #     stk.append((node.left, curr_max))
+        # return result
+        
+    
+        def count(node: TreeNode, v: int) -> int:
+                if node is None:
+                    return 0
+                mx = max(node.val, v)
+                return (node.val >= v) + count(node.left, mx) + count(node.right, mx)
+        return count(root, root.val)
+
+        
         
 
         
